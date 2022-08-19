@@ -1,8 +1,8 @@
-package day24pmTestSimplify.dao.impl;
+package day24pmTestSimplify02.dao.impl;
 
-import day24pmTestSimplify.dao.PersonDao;
-import day24pmTestSimplify.model.Person;
-import day24pmTestSimplify.util.JDBCUtil;
+
+import day24pmTestSimplify02.dao.PersonDao;
+import day24pmTestSimplify02.model.Person;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -16,10 +16,12 @@ public class PersonDaoImpl implements PersonDao {
 
     @Override
     public int add(Person person) {
-        Connection conn=JDBCUtil.getConnection();
+        Connection conn = null;
         PreparedStatement ps = null;
         int result = 0;
         try {
+            Class.forName(DRIVER);
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
 
             String sql = "insert into person (name, age, salary, born) values (?, ?, ?, ?) ";
             ps = conn.prepareStatement(sql);
@@ -29,7 +31,9 @@ public class PersonDaoImpl implements PersonDao {
             ps.setString(4, person.getBorn());
             result = ps.executeUpdate();
 
-        }  catch (SQLException e) {
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
 
@@ -50,10 +54,18 @@ public class PersonDaoImpl implements PersonDao {
 
     @Override
     public int update(Person person) {
-        Connection conn=JDBCUtil.getConnection();
+        //尝试使用JDBC代码连接数据库进行添加操作！(SQL语句由Java编写发送到数据库！)
+        Connection conn = null;
         PreparedStatement ps = null;
         int result = 0;
         try {
+            //(1). 加载JDBC驱动(保证JDBC可以运行！)(获取Driver类的字节码信息！)
+            Class.forName(DRIVER);
+            //(2). 获取连接对象(建立和MySQL的连接通道)
+            //注意：选择java.sql包下的文件！！！
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            //conn：指代连接数据库的通道！
+            //(3). 准备SQL语句(通过定义字符串变量即可！)
             String sql = "update person set name = ?, age = ?, salary = ?, born =? where id = ?;";
             //(4). 获取预编译对象装载SQL语句(找一台车装货！)
             ps = conn.prepareStatement(sql);
@@ -67,6 +79,8 @@ public class PersonDaoImpl implements PersonDao {
             ps.setString(4, person.getBorn());
             ps.setInt(5, person.getId());
             result = ps.executeUpdate();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -88,10 +102,17 @@ public class PersonDaoImpl implements PersonDao {
     @Override
     public int delete(int id) {
         //尝试使用JDBC代码连接数据库进行添加操作！(SQL语句由Java编写发送到数据库！)
-        Connection conn=JDBCUtil.getConnection();
+        Connection conn = null;
         PreparedStatement ps = null;
         int result = 0;
         try {
+            //(1). 加载JDBC驱动(保证JDBC可以运行！)(获取Driver类的字节码信息！)
+            Class.forName(DRIVER);
+            //(2). 获取连接对象(建立和MySQL的连接通道)
+            //注意：选择java.sql包下的文件！！！
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            //conn：指代连接数据库的通道！
+            //(3). 准备SQL语句(通过定义字符串变量即可！)
             String sql = "delete from person where id = ?";
             //(4). 获取预编译对象装载SQL语句(找一台车装货！)
             ps = conn.prepareStatement(sql);
@@ -101,7 +122,9 @@ public class PersonDaoImpl implements PersonDao {
             //2>. 执行DQL语句：ps.executeQuery();    (方法返回结果集结果)
             ps.setInt(1, id);
             result = ps.executeUpdate();
-        }catch (SQLException e) {
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             //(6). 关闭资源(后创建的资源先关闭！！！)
@@ -121,11 +144,18 @@ public class PersonDaoImpl implements PersonDao {
 
     @Override
     public List<Integer> selectId() {
-        Connection conn=JDBCUtil.getConnection();
+        Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         ArrayList<Integer> integers = new ArrayList<>();
         try {
+            //(1). 加载JDBC驱动(保证JDBC可以运行！)(获取Driver类的字节码信息！)
+            Class.forName(DRIVER);
+            //(2). 获取连接对象(建立和MySQL的连接通道)
+            //注意：选择java.sql包下的文件！！！
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            //conn：指代连接数据库的通道！
+            //(3). 准备SQL语句(通过定义字符串变量即可！)
             String sql = "select id from person";
             //(4). 获取预编译对象装载SQL语句(找一台车装货！)
             ps = conn.prepareStatement(sql);
@@ -139,6 +169,8 @@ public class PersonDaoImpl implements PersonDao {
                 integers.add(id);
             }
 
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -159,11 +191,18 @@ public class PersonDaoImpl implements PersonDao {
 
     @Override
     public List<Person> selectAll() {
-        Connection conn=JDBCUtil.getConnection();
+        Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         ArrayList<Person> people = new ArrayList<>();
         try {
+            //(1). 加载JDBC驱动(保证JDBC可以运行！)(获取Driver类的字节码信息！)
+            Class.forName(DRIVER);
+            //(2). 获取连接对象(建立和MySQL的连接通道)
+            //注意：选择java.sql包下的文件！！！
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            //conn：指代连接数据库的通道！
+            //(3). 准备SQL语句(通过定义字符串变量即可！)
             String sql = "select id, name, age, salary, born from person";
             //(4). 获取预编译对象装载SQL语句(找一台车装货！)
             ps = conn.prepareStatement(sql);
@@ -182,6 +221,8 @@ public class PersonDaoImpl implements PersonDao {
                 people.add(person);
             }
 
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -208,11 +249,18 @@ public class PersonDaoImpl implements PersonDao {
 
     @Override
     public List<Person> selectByName(String name) {
-        Connection conn=JDBCUtil.getConnection();
+        Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         ArrayList<Person> people = new ArrayList<>();
         try {
+            //(1). 加载JDBC驱动(保证JDBC可以运行！)(获取Driver类的字节码信息！)
+            Class.forName(DRIVER);
+            //(2). 获取连接对象(建立和MySQL的连接通道)
+            //注意：选择java.sql包下的文件！！！
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            //conn：指代连接数据库的通道！
+            //(3). 准备SQL语句(通过定义字符串变量即可！)
             String sql = "select id, name, age, salary, born from person where name = ?";
             //(4). 获取预编译对象装载SQL语句(找一台车装货！)
             ps = conn.prepareStatement(sql);
@@ -232,6 +280,8 @@ public class PersonDaoImpl implements PersonDao {
             }
 
 
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -258,11 +308,18 @@ public class PersonDaoImpl implements PersonDao {
 
     @Override
     public Person selectById(int id) {
-        Connection conn=JDBCUtil.getConnection();
+        Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         Person person = null;
         try {
+            //(1). 加载JDBC驱动(保证JDBC可以运行！)(获取Driver类的字节码信息！)
+            Class.forName(DRIVER);
+            //(2). 获取连接对象(建立和MySQL的连接通道)
+            //注意：选择java.sql包下的文件！！！
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            //conn：指代连接数据库的通道！
+            //(3). 准备SQL语句(通过定义字符串变量即可！)
             String sql = "select id, name, age, salary, born from person where id = ?";
             //(4). 获取预编译对象装载SQL语句(找一台车装货！)
             ps = conn.prepareStatement(sql);
@@ -279,6 +336,8 @@ public class PersonDaoImpl implements PersonDao {
             String born = rs.getString("born");
             person = new Person(id, name, age, salary, born);
 
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

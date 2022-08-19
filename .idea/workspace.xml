@@ -2,12 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="921f2991-0b3d-49a9-b99a-95a55675f57b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/day24pmTestSimplify/util/JDBCUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day24pmTestSimplify02/dao/PersonDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day24pmTestSimplify02/dao/impl/PersonDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day24pmTestSimplify02/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day24pmTestSimplify02/view/PersonView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day24pmTestSimplify/dao/impl/PersonDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day24pmTestSimplify/dao/impl/PersonDaoImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,9 +37,55 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/g14user01/OneDrive/20220630_20210315/20220810_step1_projects/20220819_day25/day25_am/src/day24pmTestSimplify02"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\g14user01\OneDrive\20220630_20210315\20220810_step1_projects\20220819_day25\day25_am\src\day24pmTestSimplify02" />
+      <recent name="C:\Users\g14user01\OneDrive\20220630_20210315\20220810_step1_projects\20220819_day25\day25_am\src\day24pmTestSimplify" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="day24pmTestSimplify.view" />
+      <recent name="day24pmTestSimplify.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.PersonView">
+    <configuration name="PersonView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day24pmTestSimplify.view.PersonView" />
+      <module name="day25_am" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day24pmTestSimplify.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="day24pmTestSimplify02.view.PersonView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day24pmTestSimplify02.view.PersonView" />
+      <module name="day25_am" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day24pmTestSimplify02.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PersonView" />
+        <item itemvalue="Application.day24pmTestSimplify02.view.PersonView" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -35,7 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660892846001</updated>
-      <workItem from="1660892847456" duration="837000" />
+      <workItem from="1660892847456" duration="3109000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1660892857885</created>
@@ -44,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660892857885</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="　复制来了day24的作业, 马上要按照am的课去精简了">
+      <created>1660896642825</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660896642825</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -52,6 +118,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new" />
-    <option name="LAST_COMMIT_MESSAGE" value="new" />
+    <MESSAGE value="　复制来了day24的作业, 马上要按照am的课去精简了" />
+    <option name="LAST_COMMIT_MESSAGE" value="　复制来了day24的作业, 马上要按照am的课去精简了" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
