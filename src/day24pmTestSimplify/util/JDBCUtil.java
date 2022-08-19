@@ -1,8 +1,6 @@
 package day24pmTestSimplify.util;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class JDBCUtil {
     public static final String DRIVER = "com.mysql.jdbc.Driver";
@@ -24,7 +22,29 @@ public class JDBCUtil {
         return conn;
     }
 
-    public static void close(){
+    public static void close(ResultSet rs, PreparedStatement ps, Connection conn){
+        if(rs != null){
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
+        if(ps!=null){
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if(conn != null){
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

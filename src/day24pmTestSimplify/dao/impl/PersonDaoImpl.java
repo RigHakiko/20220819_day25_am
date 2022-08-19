@@ -32,18 +32,7 @@ public class PersonDaoImpl implements PersonDao {
         }  catch (SQLException e) {
             e.printStackTrace();
         } finally {
-
-            try {
-                ps.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+            JDBCUtil.close(null,ps,conn);
         }
         return result;
     }
@@ -70,17 +59,8 @@ public class PersonDaoImpl implements PersonDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
+            JDBCUtil.close(null,ps,conn);
             //(6). 关闭资源(后创建的资源先关闭！！！)
-            try {
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
         return result;
     }
@@ -104,17 +84,7 @@ public class PersonDaoImpl implements PersonDao {
         }catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            //(6). 关闭资源(后创建的资源先关闭！！！)
-            try {
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            JDBCUtil.close(null,ps,conn);
         }
         return result;
     }
@@ -142,17 +112,7 @@ public class PersonDaoImpl implements PersonDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            //(6). 关闭资源(后创建的资源先关闭！！！)
-            try {
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            JDBCUtil.close(rs,ps,conn);
         }
         return integers;
     }
@@ -185,23 +145,7 @@ public class PersonDaoImpl implements PersonDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            //(6). 关闭资源(后创建的资源先关闭！！！)
-
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-            try {
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            JDBCUtil.close(rs,ps,conn);
         }
         return people;
     }
@@ -235,23 +179,7 @@ public class PersonDaoImpl implements PersonDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            //(6). 关闭资源(后创建的资源先关闭！！！)
-
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-            try {
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            JDBCUtil.close(rs,ps,conn);
         }
         return people;
     }
@@ -282,23 +210,7 @@ public class PersonDaoImpl implements PersonDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            //(6). 关闭资源(后创建的资源先关闭！！！)
-
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-            try {
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            JDBCUtil.close(rs,ps,conn);
         }
         return person;
     }

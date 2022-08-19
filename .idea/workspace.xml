@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="921f2991-0b3d-49a9-b99a-95a55675f57b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/day24pmTestSimplify/util/JDBCUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day24pmTestSimplify02/dao/PersonDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day24pmTestSimplify02/dao/impl/PersonDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day24pmTestSimplify02/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day24pmTestSimplify02/view/PersonView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/day24pmTestSimplify/dao/impl/PersonDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day24pmTestSimplify/dao/impl/PersonDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day24pmTestSimplify/util/JDBCUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day24pmTestSimplify/util/JDBCUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +35,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/g14user01/OneDrive/20220630_20210315/20220810_step1_projects/20220819_day25/day25_am/src/day24pmTestSimplify02"
+    "last_opened_file_path": "C:/Users/g14user01/OneDrive/20220630_20210315/20220810_step1_projects/20220819_day25/day25_am"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\g14user01\OneDrive\20220630_20210315\20220810_step1_projects\20220819_day25\day25_am" />
       <recent name="C:\Users\g14user01\OneDrive\20220630_20210315\20220810_step1_projects\20220819_day25\day25_am\src\day24pmTestSimplify02" />
       <recent name="C:\Users\g14user01\OneDrive\20220630_20210315\20220810_step1_projects\20220819_day25\day25_am\src\day24pmTestSimplify" />
     </key>
@@ -94,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660892846001</updated>
-      <workItem from="1660892847456" duration="3109000" />
+      <workItem from="1660892847456" duration="4745000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1660892857885</created>
@@ -110,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660896642825</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="不信邪, 我在day24pmTestSimplify02又试了一次简化, 终于发现错误原因是没有导包">
+      <created>1660898836879</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660898836879</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +123,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new" />
     <MESSAGE value="　复制来了day24的作业, 马上要按照am的课去精简了" />
-    <option name="LAST_COMMIT_MESSAGE" value="　复制来了day24的作业, 马上要按照am的课去精简了" />
+    <MESSAGE value="不信邪, 我在day24pmTestSimplify02又试了一次简化, 终于发现错误原因是没有导包" />
+    <option name="LAST_COMMIT_MESSAGE" value="不信邪, 我在day24pmTestSimplify02又试了一次简化, 终于发现错误原因是没有导包" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
